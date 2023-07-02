@@ -88,7 +88,7 @@ struct ModSettings {
 
 struct GameSettings {
     GameSettings()
-        : m_forcedFov{ 80 }
+        : m_forcedFov{ 65 }
     {
     }
 
