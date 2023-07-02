@@ -32,7 +32,7 @@ void RunFrameDetour::hookRunFrame(const int32_t levelTime)
     Ultimate::m_ultimate->m_crateTracker.frame();
     //Ultimate::m_ultimate->m_virtualMachine.frame();
 
-    static auto startFrame = 0;
+    /*static auto startFrame = 0;
     static auto endFrame = 20 * 30;
 
     ++startFrame;
@@ -41,7 +41,7 @@ void RunFrameDetour::hookRunFrame(const int32_t levelTime)
         Message::SendChatAnnouncement(-1, "This lobby is hosted with ^2MW2 Lobby Tools^7 by ^2Scoudem^7");
         Message::SendChatAnnouncement(-1, "Download ^2@^7 scoudem.github.io");
         startFrame = 0;
-    }
+    }*/
 
     m_originalRunFrame(levelTime);
 }

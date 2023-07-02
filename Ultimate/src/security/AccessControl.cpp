@@ -18,7 +18,7 @@ void AccessControl::kickClient(const int32_t clientNum, const char* message)
 
 	const auto reason = String::Format("%s^7: %s", member->name, message);
 
-	Message::SendChatAnnouncement(-1, reason);
+	//Message::SendChatAnnouncement(-1, reason);
 	SV_GameDropClient(clientNum, reason);
 }
 
@@ -30,7 +30,7 @@ void AccessControl::banClient(const int32_t clientNum, const char* message)
 
 	const auto reason = String::Format("%s^7: %s", member->name, message);
 
-	Message::SendChatAnnouncement(-1, reason);
+	//Message::SendChatAnnouncement(-1, reason);
 	SV_GameDropClient(clientNum, reason);
 }
 

@@ -32,10 +32,10 @@ void ActiveGame::playerSpawned(const uint32_t playerNum)
 
 //        player.initHud();
 
-        const auto name = player.getPartyClient()->name;
-        const auto ip = player.getPartyClient()->getRemoteIp();
-        const auto message = String::Format("%s^7 connected", name);
-        Message::SendChatAnnouncement(-1, message);
+        //const auto name = player.getPartyClient()->name;
+        //const auto ip = player.getPartyClient()->getRemoteIp();
+        //const auto message = String::Format("%s^7 connected", name);
+        //Message::SendChatAnnouncement(-1, message);
     }
 
     player.m_nextRandomWeapons[0] = getRandomWeaponName();
@@ -63,12 +63,12 @@ void ActiveGame::setKillStreak(const uint32_t playerNum, const int32_t streak)
 {
     auto& player = getActivePlayer(playerNum);
 
-    if (streak > player.m_killstreak) {
-        if (streak % 5 == 0) {
-            const auto message = String::Format("%s^7 is on a ^2%i^7 killstreak!", player.getPartyClient()->name, streak);
-            Message::SendChatAnnouncement(-1, message);
-        }
-    }
+    //if (streak > player.m_killstreak) {
+    //    if (streak % 5 == 0) {
+    //        const auto message = String::Format("%s^7 is on a ^2%i^7 killstreak!", player.getPartyClient()->name, streak);
+    //        Message::SendChatAnnouncement(-1, message);
+    //    }
+    //}
 
     player.m_killstreak = streak;
 //    player.updateKillStreakHud();
