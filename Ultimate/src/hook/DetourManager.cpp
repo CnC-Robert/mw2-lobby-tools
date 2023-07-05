@@ -7,6 +7,7 @@
 #include "game/PlayerDieDetour.h"
 #include "game/SayDetour.h"
 #include "input/MouseEventDetour.h"
+#include "input/KeyboardPressDetour.h"
 #include "party/CanHostServerDetour.h"
 #include "party/ClientHandshakeDetour.h"
 #include "script/NotifyDetour.h"
@@ -35,6 +36,7 @@ DetourManager::DetourManager()
     registerDetour(std::make_shared<RunFrameDetour>());
     //registerDetour(std::make_shared<ShellExecuteDetour>());
     //registerDetour(std::make_shared<FindConfigstringIndexDetour>());
+	registerDetour(std::make_shared<KeyboardPressDetour>());
 
     m_scriptManager.registerHook(230, Proxies::ExitLevel);
     m_scriptManager.registerHook(430, Proxies::SetSpawnWeaponControl);
