@@ -1,12 +1,12 @@
-#include "MouseEventDetour.h"
+#include "MouseMoveDetour.h"
 #include "ultimate/Ultimate.h"
 #include <detours/detours.h>
 
-MouseEventFunction MouseEventDetour::m_originalMouseEvent = nullptr;
+MouseMoveFunction MouseMoveDetour::m_originalMouseEvent = nullptr;
 
-long MouseEventDetour::applyDetour()
+long MouseMoveDetour::applyDetour()
 {
-    m_originalMouseEvent = reinterpret_cast<MouseEventFunction>(0x4C1880);
+    m_originalMouseEvent = reinterpret_cast<MouseMoveFunction>(0x4C1880);
 
     const auto result = DetourAttach(&reinterpret_cast<PVOID&>(m_originalMouseEvent), &hookMouseEvent);
 
@@ -15,7 +15,7 @@ long MouseEventDetour::applyDetour()
     return result;
 }
 
-long MouseEventDetour::restoreDetour()
+long MouseMoveDetour::restoreDetour()
 {
     const auto result = DetourDetach(&reinterpret_cast<PVOID&>(m_originalMouseEvent), &hookMouseEvent);
 
@@ -24,7 +24,7 @@ long MouseEventDetour::restoreDetour()
     return result;
 }
 
-int MouseEventDetour::hookMouseEvent(const int x, const int y, const int dx, const int dy)
+int MouseMoveDetour::hookMouseEvent(const int x, const int y, const int dx, const int dy)
 {
     if (Ultimate::m_ultimate->m_menuManager.isMenuOpen()) {
         return 0;

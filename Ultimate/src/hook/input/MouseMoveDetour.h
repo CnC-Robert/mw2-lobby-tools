@@ -1,11 +1,11 @@
 #pragma once
 #include "../Detour.h"
 
-using MouseEventFunction = int (*)(int x, int y, int dx, int dy);
+using MouseMoveFunction = int (*)(int x, int y, int dx, int dy);
 
-class MouseEventDetour : public Detour {
+class MouseMoveDetour : public Detour {
 public:
-    static MouseEventFunction m_originalMouseEvent;
+    static MouseMoveFunction m_originalMouseEvent;
 
     long applyDetour() override;
 

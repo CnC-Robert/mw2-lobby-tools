@@ -6,8 +6,9 @@
 #include "game/MenuResponseDetour.h"
 #include "game/PlayerDieDetour.h"
 #include "game/SayDetour.h"
-#include "input/MouseEventDetour.h"
+#include "input/MouseMoveDetour.h"
 #include "input/KeyboardPressDetour.h"
+#include "input/InputEventDetour.h"
 #include "party/CanHostServerDetour.h"
 #include "party/ClientHandshakeDetour.h"
 #include "script/NotifyDetour.h"
@@ -21,7 +22,7 @@ DetourManager::DetourManager()
 //    registerDetour(std::make_shared<EndSceneDetour>());
 //    registerDetour(std::make_shared<ResetDetour>());
     registerDetour(std::make_shared<DispatchMessageDetour>());
-    registerDetour(std::make_shared<MouseEventDetour>());
+    registerDetour(std::make_shared<MouseMoveDetour>());
     registerDetour(std::make_shared<ClientHandshakeDetour>());
     registerDetour(std::make_shared<SayDetour>());
     registerDetour(std::make_shared<PlayerDieDetour>());
@@ -37,6 +38,7 @@ DetourManager::DetourManager()
     //registerDetour(std::make_shared<ShellExecuteDetour>());
     //registerDetour(std::make_shared<FindConfigstringIndexDetour>());
 	registerDetour(std::make_shared<KeyboardPressDetour>());
+	registerDetour(std::make_shared<InputEventDetour>());
 
     m_scriptManager.registerHook(230, Proxies::ExitLevel);
     m_scriptManager.registerHook(430, Proxies::SetSpawnWeaponControl);
