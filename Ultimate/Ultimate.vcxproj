@@ -112,6 +112,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\hook\input\KeyboardPressDetour.cpp" />
     <ClCompile Include="lib\imgui\imgui.cpp" />
     <ClCompile Include="lib\imgui\imgui_demo.cpp" />
     <ClCompile Include="lib\imgui\imgui_draw.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="lib\iw4\structure.cpp" />
     <ClCompile Include="lib\iw4\ui.cpp" />
     <ClCompile Include="lib\steam\steam_api.cpp" />
+    <ClCompile Include="src\hook\input\MouseMoveDetour.cpp" />
     <ClCompile Include="src\compiler\compiler.cpp" />
     <ClCompile Include="src\disasembler\Disassembler.cpp" />
     <ClCompile Include="src\disasembler\Opcode.cpp" />
@@ -171,7 +173,6 @@
     <ClCompile Include="lib\iw4\party.cpp" />
     <ClCompile Include="src\hook\d3d\ResetDetour.cpp" />
     <ClCompile Include="src\hook\party\ClientHandshakeDetour.cpp" />
-    <ClCompile Include="src\hook\input\MouseEventDetour.cpp" />
     <ClCompile Include="src\menu\MenuManager.cpp" />
     <ClCompile Include="src\hook\user32\DispatchMessageDetour.cpp" />
     <ClCompile Include="src\patch\Patch.cpp" />
@@ -193,8 +194,10 @@
     <ClCompile Include="src\vm\VirtualMachine.cpp" />
     <ClCompile Include="src\vm\context\VmContext.cpp" />
     <ClCompile Include="src\vm\value\VMValue.cpp" />
+    <ClCompile Include="src\hook\input\InputEventDetour.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\hook\input\KeyboardPressDetour.h" />
     <ClInclude Include="lib\capstone\arm.h" />
     <ClInclude Include="lib\capstone\arm64.h" />
     <ClInclude Include="lib\capstone\capstone.h" />
@@ -301,6 +304,7 @@
     <ClInclude Include="lib\steam\steamvr.h" />
     <ClInclude Include="lib\steam\steam_api.h" />
     <ClInclude Include="lib\steam\steam_gameserver.h" />
+    <ClInclude Include="src\hook\input\MouseMoveDetour.h" />
     <ClInclude Include="src\compiler\compiler.h" />
     <ClInclude Include="src\disasembler\Disassembler.h" />
     <ClInclude Include="src\disasembler\Opcode.h" />
@@ -353,7 +357,7 @@
     <ClInclude Include="lib\iw4\server.h" />
     <ClInclude Include="src\hook\d3d\ResetDetour.h" />
     <ClInclude Include="src\hook\party\ClientHandshakeDetour.h" />
-    <ClInclude Include="src\hook\input\MouseEventDetour.h" />
+    <ClInclude Include="src\hook\input\MouseMovementDetour.h" />
     <ClInclude Include="src\menu\MenuManager.h" />
     <ClInclude Include="src\hook\user32\DispatchMessageDetour.h" />
     <ClInclude Include="src\patch\Patch.h" />
@@ -378,6 +382,7 @@
     <ClInclude Include="src\vm\VirtualMachine.h" />
     <ClInclude Include="src\vm\context\VmContext.h" />
     <ClInclude Include="src\vm\value\VMValue.h" />
+    <ClInclude Include="src\hook\input\InputEventDetour.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="lib\detours\detours.pdb" />

@@ -45,9 +45,6 @@
     <ClCompile Include="src\menu\MenuManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\hook\input\MouseEventDetour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\hook\party\ClientHandshakeDetour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -258,6 +255,15 @@
     <ClCompile Include="src\hook\d3d\D3DHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\hook\input\KeyboardPressDetour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hook\input\InputEventDetour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\hook\input\MouseMoveDetour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ultimate\Ultimate.h">
@@ -297,9 +303,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\menu\MenuManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\hook\input\MouseEventDetour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\hook\party\ClientHandshakeDetour.h">
@@ -807,6 +810,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lib\capstone\xcore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hook\input\KeyboardPressDetour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hook\input\InputEventDetour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hook\input\MouseMovementDetour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hook\input\MouseMoveDetour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

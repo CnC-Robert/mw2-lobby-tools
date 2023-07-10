@@ -28,6 +28,6 @@ LRESULT InputEventDetour::hookInputEvent(HWND hwnd, UINT uMsg, WPARAM wParam, LP
 		return DefWindowProcA(hwnd, uMsg, wParam, lParam);
 	}
 
-	return m_originalTestFunction(hwnd, uMsg, wParam, lParam);
+	return m_originalInputEvent(hwnd, uMsg, wParam, lParam);
 
 }
