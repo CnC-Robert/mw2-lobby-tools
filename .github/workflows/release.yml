@@ -53,5 +53,5 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: Ultimate.dll
+        files: Release/Ultimate.dll
         tag_name: release
