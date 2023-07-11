@@ -53,5 +53,6 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: Release/Ultimate.dll
-        tag_name: release
+        upload_url: ${{ github.event.release.upload_url }}
+        files: ./Release/Ultimate.dll
+        asset_name: Ultimate.dll
