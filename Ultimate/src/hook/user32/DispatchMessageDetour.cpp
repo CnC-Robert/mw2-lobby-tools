@@ -27,13 +27,11 @@ long DispatchMessageDetour::restoreDetour()
 
 LRESULT DispatchMessageDetour::hookDispatchMessage(MSG* message)
 {
-    const auto shouldDispatch = Ultimate::m_ultimate->onMessage(message);
+	Ultimate::m_ultimate->m_menuManager.onMessage(message);
 
-    // if (shouldDispatch) {
-    //     return m_originalDispatchMessage(message);
-    // }
+	if (Ultimate::m_ultimate->m_menuManager.isMenuOpen()) {
+		return DefWindowProcA(message->hwnd, message->message, message->wParam, message->lParam);
+	}
 
     return m_originalDispatchMessage(message);
-
-    // return false;
 }

@@ -30,8 +30,3 @@ void Ultimate::onEndScene()
 	m_runningThreads.runThreads();
     m_menuManager.onEndScene();
 }
-
-bool Ultimate::onMessage(MSG* message) const
-{
-    return m_menuManager.onMessage(message);
-}

@@ -23,7 +23,6 @@ public:
     void unhook();
 
     void onEndScene();
-    bool onMessage(MSG* message) const;
 
     UltimateConsole m_console;
     PatchManager m_patchManager;
