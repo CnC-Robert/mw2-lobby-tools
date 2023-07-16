@@ -15,7 +15,7 @@
     <ProjectGuid>{DA13EA2D-4ECF-4A6D-820E-C3C4E560BC13}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Ultimate</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,6 +140,7 @@
     <ClCompile Include="src\hook\game\ClientDisconnectDetour.cpp" />
     <ClCompile Include="src\hook\game\FindConfigstringIndexDetour.cpp" />
     <ClCompile Include="src\hook\game\MenuResponseDetour.cpp" />
+    <ClCompile Include="src\hook\input\KeyboardPressDetour.cpp" />
     <ClCompile Include="src\hook\network\NetchanProcessDetour.cpp" />
     <ClCompile Include="src\hook\script\RunFrameDetour.cpp" />
     <ClCompile Include="src\hook\script\NotifyDetour.cpp" />
@@ -310,6 +311,7 @@
     <ClInclude Include="src\hook\game\FindConfigstringIndexDetour.h" />
     <ClInclude Include="src\hook\game\MenuResponseDetour.h" />
     <ClInclude Include="src\hook\Hook.h" />
+    <ClInclude Include="src\hook\input\KeyboardPressDetour.h" />
     <ClInclude Include="src\hook\VirtualHook.h" />
     <ClInclude Include="src\hook\network\NetchanProcessDetour.h" />
     <ClInclude Include="src\hook\script\RunFrameDetour.h" />

@@ -258,6 +258,9 @@
     <ClCompile Include="src\hook\d3d\D3DHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\hook\input\KeyboardPressDetour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ultimate\Ultimate.h">
@@ -807,6 +810,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lib\capstone\xcore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\hook\input\KeyboardPressDetour.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
