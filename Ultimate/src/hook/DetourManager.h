@@ -21,8 +21,6 @@ private:
     std::vector<std::shared_ptr<Detour>> m_detours;
 
     static long beginTransaction();
-    static long applyDetour(const std::shared_ptr<Detour>&);
-    static long restoreDetour(const std::shared_ptr<Detour>&);
     static long commitTransaction();
 
     D3DHooks m_d3dHooks;

@@ -39,7 +39,6 @@ void PartySettings::drawPartySettings()
 void LogSettings::drawLogSettings()
 {
     if (ImGui::TreeNode("Logging")) {
-        ImGui::Checkbox("Log deaths", &m_logDeaths);
         ImGui::Checkbox("Log chat", &m_logChat);
         ImGui::Checkbox("Log allowed clients", &m_logAllowedHandshakes);
         ImGui::Checkbox("Log denied clients", &m_logDeniedHandshakes);
@@ -59,26 +58,7 @@ void LogSettings::drawLogSettings()
     }
 }
 
-void ModSettings::drawModSettings()
-{
-    if (ImGui::TreeNode("Mods")) {
-        ImGui::Checkbox("Random weapons", &m_randomWeaponModEnabled);
-
-//        if (ImGui::TreeNode("All weapons")) {
-//            for (auto i = 0; i < g_weaponDefs.size(); i++) {
-//                const auto weaponName = g_weaponDefs[i]->szInternalName;
-//                ImGui::Text("%4d - %s", i, weaponName);
-//            }
-//
-//            ImGui::TreePop();
-//        }
-
-        ImGui::TreePop();
-    }
-}
-
-void GameSettings::drawGameSettings()
-{
+void GameSettings::drawGameSettings() {
     if (ImGui::TreeNode("Game")) {
         static char commandBuffer[1024] = "";
         if (ImGui::InputText("Command", commandBuffer, IM_ARRAYSIZE(commandBuffer), ImGuiInputTextFlags_EnterReturnsTrue)) {
@@ -87,22 +67,15 @@ void GameSettings::drawGameSettings()
             ImGui::SetKeyboardFocusHere(-1);
         }
 
-        if (ImGui::InputInt("Field of view", &m_forcedFov)) {
-            const auto fovString = String::Format("s cg_fov \"%d\"", m_forcedFov);
-            SV_GameSendServerCommandAll(svscmd_type::SV_CMD_RELIABLE, fovString);
-        };
-
         ImGui::TreePop();
     }
 }
 
-void Settings::drawSettings()
-{
+void Settings::drawSettings() {
     ImGui::Begin("Settings", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
 
     m_partySettings.drawPartySettings();
     m_gameSettings.drawGameSettings();
-    m_modSettings.drawModSettings();
     m_logSettings.drawLogSettings();
 
     ImGui::End();

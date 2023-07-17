@@ -13,9 +13,6 @@ class ActiveGame {
     std::mt19937 m_weaponRng;
     std::uniform_int_distribution<int> m_weaponDistribution;
 	std::uniform_int_distribution<int> m_equipmentDistribution;;
-	
-    const char* getRandomWeaponName();
-    const char* getRandomEquipmentName();
 
 public:
 	ActiveGame()
@@ -31,12 +28,6 @@ public:
     void playerSuicide(uint32_t playerNum);
     void playerDisconnected(uint32_t playerNum);
     void gameOver();
-
-    const char* getCurrentRandomWeapon(uint32_t playerNum);
-    void advanceCurrentRandomWeapon(uint32_t playerNum);
-
-	const char* getCurrentRandomEquipment(uint32_t playerNum);
-	void advanceCurrentRandomEquipment(uint32_t playerNum);
 
 	void drawActiveGame();
 };

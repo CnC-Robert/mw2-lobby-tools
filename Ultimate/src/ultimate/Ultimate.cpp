@@ -9,24 +9,16 @@ Ultimate::Ultimate()
     static_assert(sizeof(gentity_s) == 0x274);
 }
 
-void Ultimate::hook()
-{
+void Ultimate::hook() {
     m_patchManager.applyPatches();
     m_menuManager.initializeImGui();
     g_detours.hook();
     m_hooked = true;
 }
 
-void Ultimate::unhook()
-{
+void Ultimate::unhook() {
     g_detours.unhook();
-    MenuManager::shutdownImGui();
+    m_menuManager.shutdownImGui();
 	m_patchManager.restorePatches();
     m_hooked = false;
-}
-
-void Ultimate::onEndScene()
-{
-	m_runningThreads.runThreads();
-    m_menuManager.onEndScene();
 }

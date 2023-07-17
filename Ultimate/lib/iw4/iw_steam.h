@@ -1,6 +1,6 @@
 #pragma once
-#include "steam_api.h"
-#include "steamclientpublic.h"
+#include "steam/steam_api.h"
+#include "steam/steamclientpublic.h"
 
 struct IWSteamClient
 {

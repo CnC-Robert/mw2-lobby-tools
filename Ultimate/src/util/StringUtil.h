@@ -15,8 +15,3 @@ void StringSplit(const std::string& string, const char delimeter, Out result)
 }
 
 std::vector<std::string> StringSplit(const std::string& string, char delimeter);
-
-namespace Util
-{
-	const char *HostFormat(const char* format, ...);
-}

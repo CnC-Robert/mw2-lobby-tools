@@ -2,8 +2,7 @@
 #include "iw4/command.h"
 #include "iw4/server.h"
 
-PatchManager::PatchManager()
-{
+PatchManager::PatchManager() {
     registerPatch({ 0x6293C4u, { 0x6A, 0x01 } }); // Steam game server vac insecure flag
 
     registerPatch({ 0x582885u, { 0x8B, 0x0C } }); // VM_Notify store script method in ecx instead of eax
@@ -12,13 +11,11 @@ PatchManager::PatchManager()
 	registerPatch({ 0x628A7B, { 0x90, 0x90 } }); // OnLobbyCreated fix for not being able to create lobby while vac banned.
 }
 
-void PatchManager::registerPatch(const Patch& patch)
-{
+void PatchManager::registerPatch(const Patch& patch) {
     m_patches.push_back(patch);
 }
 
-void PatchManager::applyPatches()
-{
+void PatchManager::applyPatches() {
     std::printf("Applying %Iu patches...\n", m_patches.size());
 
     for (auto& patch : m_patches) {
@@ -28,8 +25,7 @@ void PatchManager::applyPatches()
     registerCommands();
 }
 
-void PatchManager::restorePatches()
-{
+void PatchManager::restorePatches() {
     std::printf("Restoring %Iu patches...\n", m_patches.size());
 
     for (auto& patch : m_patches) {
@@ -39,14 +35,12 @@ void PatchManager::restorePatches()
     removeCommands();
 }
 
-void PatchManager::registerCommands()
-{
+void PatchManager::registerCommands() {
     Cmd::AddCommandInternal("map_restart", []() {
         Server::MapRestart(0, 0);
     }, &g_mapRestart);
 }
 
-void PatchManager::removeCommands()
-{
+void PatchManager::removeCommands() {
     Cmd::RemoveCommand("map_restart");
 }

@@ -38,25 +38,23 @@ struct PartySettings {
 struct LogSettings {
 
     LogSettings()
-        : m_logDeaths{ false }
-        , m_logChat{ true }
-        , m_logAllowedHandshakes{ false }
+        : m_logChat{ true }
+        , m_logAllowedHandshakes{ true }
         , m_logDeniedHandshakes{ true }
         , m_logWeapons{ false }
-        , m_logClientDvars{ false }
+        , m_logClientDvars{ true }
         , m_logPerks{ false }
         , m_logSpawnWeapons{ false }
         , m_logSpawn{ false }
         , m_logLoadoutControl{ false }
         , m_logXAssetLookups{ false }
         , m_logXAssetFilter{ -1 }
-        , m_logMenuResponses{ false }
+        , m_logMenuResponses{ true }
         , m_logAccessViolations{ true }
-        , m_logServerCommands{ false }
+        //, m_logServerCommands{ false }
     {
     }
 
-    bool m_logDeaths;
     bool m_logChat;
     bool m_logAllowedHandshakes;
     bool m_logDeniedHandshakes;
@@ -70,30 +68,12 @@ struct LogSettings {
     int m_logXAssetFilter;
     bool m_logMenuResponses;
     bool m_logAccessViolations;
-    bool m_logServerCommands;
+    //bool m_logServerCommands;
 
     void drawLogSettings();
 };
 
-struct ModSettings {
-    ModSettings()
-        : m_randomWeaponModEnabled{ false }
-    {
-    }
-
-    bool m_randomWeaponModEnabled;
-
-    void drawModSettings();
-};
-
 struct GameSettings {
-    GameSettings()
-        : m_forcedFov{ 65 }
-    {
-    }
-
-    int m_forcedFov;
-
     void drawGameSettings();
 };
 
@@ -101,7 +81,6 @@ struct Settings {
 
     PartySettings m_partySettings;
     LogSettings m_logSettings;
-    ModSettings m_modSettings;
     GameSettings m_gameSettings;
 
     void drawSettings();

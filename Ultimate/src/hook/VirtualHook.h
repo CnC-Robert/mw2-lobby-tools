@@ -13,13 +13,11 @@ public:
     {
     }
 
-    void hook() override
-    {
+    void hook() override {
         m_hook.hook();
     }
 
-    void unhook() override
-    {
+    void unhook() override {
         m_hook.unHook();
     }
 
