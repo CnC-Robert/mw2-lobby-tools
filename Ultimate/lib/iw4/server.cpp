@@ -9,7 +9,7 @@ void SV_GameSendServerCommandAll(svscmd_type type, const char* fmt)
 
 void Server::ExecuteClientCommand(client_t* client, const char* command, int clientOk, int fromOldServer)
 {
-    auto func = 0x586B80;
+    auto func = 0x586A40;
 
     __asm {
         mov eax, fromOldServer

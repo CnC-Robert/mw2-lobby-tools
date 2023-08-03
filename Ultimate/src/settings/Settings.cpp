@@ -5,8 +5,7 @@
 #include "iw4/server.h"
 #include <imgui/imgui.h>
 
-void PartySettings::drawPartySettings()
-{
+void PartySettings::drawPartySettings() {
     if (ImGui::TreeNode("Party")) {
         if (ImGui::Checkbox("Force host", &m_forceHost)) {
             if (m_forceHost) {
@@ -26,7 +25,11 @@ void PartySettings::drawPartySettings()
             }
         }
 
-        ImGui::InputInt("Max clients", m_maxClients);
+		if (ImGui::InputInt("Max clients", m_maxClients)) {
+			if (*m_maxClients > 18) {
+				*m_maxClients = 18;
+			}
+		}
 
         if (ImGui::Button("Open game setup")) {
             Menu::OpenMenu(0, "popup_gamesetup");
@@ -36,8 +39,7 @@ void PartySettings::drawPartySettings()
     }
 }
 
-void LogSettings::drawLogSettings()
-{
+void LogSettings::drawLogSettings() {
     if (ImGui::TreeNode("Logging")) {
         ImGui::Checkbox("Log chat", &m_logChat);
         ImGui::Checkbox("Log allowed clients", &m_logAllowedHandshakes);
@@ -48,11 +50,8 @@ void LogSettings::drawLogSettings()
         ImGui::Checkbox("Log spawn weapons", &m_logSpawnWeapons);
         ImGui::Checkbox("Log player spawns", &m_logSpawn);
         ImGui::Checkbox("Log loadout control", &m_logLoadoutControl);
-        //ImGui::Checkbox("Log XAsset lookups", &m_logXAssetLookups);
-        //ImGui::InputInt("XAsset filter", &m_logXAssetFilter);
         ImGui::Checkbox("Log menu responses", &m_logMenuResponses);
         ImGui::Checkbox("Log access violations", &m_logAccessViolations);
-        //ImGui::Checkbox("Log server commands", &m_logServerCommands);
 
         ImGui::TreePop();
     }

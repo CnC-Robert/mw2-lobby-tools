@@ -607,5 +607,5 @@ struct MenuList {
 
 namespace Menu {
 
-IW4_FUNCTION(OpenMenu, void, (int localClientNum, const char* menuName), 0x59DF10);
+IW4_FUNCTION(OpenMenu, void, (int localClientNum, const char* menuName), 0x59DDE0);
 }

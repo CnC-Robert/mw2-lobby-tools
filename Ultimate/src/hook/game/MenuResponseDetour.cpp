@@ -5,11 +5,10 @@
 #include "settings/Settings.h"
 #include "ultimate/Ultimate.h"
 
-MenuResponseFunction MenuResponseDetour::m_originalMenuResponse = nullptr;
+MenuResponseFunction MenuResponseDetour::m_originalMenuResponse;
 
-long MenuResponseDetour::applyDetour()
-{
-    m_originalMenuResponse = reinterpret_cast<MenuResponseFunction>(0x525860);
+long MenuResponseDetour::applyDetour() {
+    m_originalMenuResponse = reinterpret_cast<MenuResponseFunction>(0x525730);
 
     const auto result = DetourAttach(&reinterpret_cast<PVOID&>(m_originalMenuResponse), &hookMenuResponse);
 
@@ -18,8 +17,7 @@ long MenuResponseDetour::applyDetour()
     return result;
 }
 
-long MenuResponseDetour::restoreDetour()
-{
+long MenuResponseDetour::restoreDetour() {
     const auto result = DetourDetach(&reinterpret_cast<PVOID&>(m_originalMenuResponse), &hookMenuResponse);
 
     std::printf("Restored Cmd_MenuResponse_f\n");
@@ -27,8 +25,7 @@ long MenuResponseDetour::restoreDetour()
     return result;
 }
 
-void MenuResponseDetour::hookMenuResponse(gentity_s* entity)
-{
+void MenuResponseDetour::hookMenuResponse(gentity_s* entity) {
     constexpr auto bufferSize = 1024;
 
     char serverIdBuffer[bufferSize];

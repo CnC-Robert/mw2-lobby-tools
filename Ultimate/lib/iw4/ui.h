@@ -48,5 +48,5 @@ struct UiContext {
 };
 
 namespace Ui {
-	const inline auto g_uiContext = reinterpret_cast<UiContext*>(0x627AA18);
+	const inline auto g_uiContext = reinterpret_cast<UiContext*>(0x627A998);
 }

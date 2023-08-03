@@ -57,7 +57,7 @@ int String::CustomLocalizedStringIndex(const char* string)
     }
 
     if (i == 600) {
-        const auto error = Format(reinterpret_cast<char*>(0x69BEE8), 511, targetString);
+        const auto error = Format(reinterpret_cast<char*>(0x69BED1), 511, targetString);
         std::printf("CustomLocalizedStringIndex -> Overflow: %s\n", error);
     }
 
@@ -105,7 +105,7 @@ LABEL_21:
         } while (currentIndex2 < 600);
 
         if (currentIndex2 == 600) {
-            const auto error = Format(reinterpret_cast<char*>(0x69BEE8), 511, targetString);
+            const auto error = Format(reinterpret_cast<char*>(0x69BED1), 511, targetString);
             std::printf("CustomLocalizedStringIndex -> ERROR: %s\n", error);
         }
 

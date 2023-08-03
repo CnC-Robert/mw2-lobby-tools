@@ -76,9 +76,4 @@ namespace Proxies {
 		return true;
 	}
 
-	bool ExitLevel(const scr_entref_t entref) {
-		Ultimate::m_ultimate->m_activeGame.gameOver();
-		return true;
-	}
-
 } // namespace Proxies

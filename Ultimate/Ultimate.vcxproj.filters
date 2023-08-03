@@ -45,9 +45,6 @@
     <ClCompile Include="src\hook\party\ClientHandshakeDetour.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\util\VTable.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\security\AccessControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -198,9 +195,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\hook\DetourManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\VTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ultimate\UltimateConsole.h">

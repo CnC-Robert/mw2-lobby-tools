@@ -1,7 +1,7 @@
 ﻿#include "Ultimate.h"
 #include "hook/DetourManager.h"
 
-std::shared_ptr<Ultimate> Ultimate::m_ultimate = nullptr;
+std::shared_ptr<Ultimate> Ultimate::m_ultimate;
 
 Ultimate::Ultimate()
     : m_hooked{ false }

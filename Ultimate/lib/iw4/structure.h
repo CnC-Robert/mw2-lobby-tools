@@ -95,5 +95,5 @@ struct StructuredDataDef {
 
 namespace Structure
 {
-	IW4_FUNCTION(FindStructuredDataOfSize, StructuredData*, (const char *name, unsigned int availableBytes), 0x5BAA90);
+	IW4_FUNCTION(FindStructuredDataOfSize, StructuredData*, (const char *name, unsigned int availableBytes), 0x5BA9E0);
 }

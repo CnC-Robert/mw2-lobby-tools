@@ -4,9 +4,8 @@
 
 ClientDisconnectFunction ClientDisconnectDetour::m_originalClientDisconnect;
 
-long ClientDisconnectDetour::applyDetour()
-{
-	m_originalClientDisconnect = reinterpret_cast<ClientDisconnectFunction>(0x51F830);
+long ClientDisconnectDetour::applyDetour() {
+	m_originalClientDisconnect = reinterpret_cast<ClientDisconnectFunction>(0x51F700);
 
 	const auto result = DetourAttach(&reinterpret_cast<PVOID&>(m_originalClientDisconnect), &hookClientDisconnect);
 
@@ -15,8 +14,7 @@ long ClientDisconnectDetour::applyDetour()
 	return result;
 }
 
-long ClientDisconnectDetour::restoreDetour()
-{
+long ClientDisconnectDetour::restoreDetour() {
 	const auto result = DetourDetach(&reinterpret_cast<PVOID&>(m_originalClientDisconnect), &hookClientDisconnect);
 
 	std::printf("Restored ClientDisconnect\n");
@@ -24,8 +22,7 @@ long ClientDisconnectDetour::restoreDetour()
 	return result;
 }
 
-void ClientDisconnectDetour::hookClientDisconnect(const int clientNum)
-{
+void ClientDisconnectDetour::hookClientDisconnect(const int clientNum) {
 	Ultimate::m_ultimate->m_activeGame.playerDisconnected(clientNum);
 
 	return m_originalClientDisconnect(clientNum);

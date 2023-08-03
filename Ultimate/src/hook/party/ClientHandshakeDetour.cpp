@@ -5,9 +5,8 @@
 
 ClientHandshakeFunction ClientHandshakeDetour::m_originalClientHandshake;
 
-long ClientHandshakeDetour::applyDetour()
-{
-    m_originalClientHandshake = reinterpret_cast<ClientHandshakeFunction>(0x4DB0C0);
+long ClientHandshakeDetour::applyDetour() {
+    m_originalClientHandshake = reinterpret_cast<ClientHandshakeFunction>(0x4DB040);
 
     const auto result = DetourAttach(&reinterpret_cast<PVOID&>(m_originalClientHandshake), hookClientHandshake);
 
@@ -16,8 +15,7 @@ long ClientHandshakeDetour::applyDetour()
     return result;
 }
 
-long ClientHandshakeDetour::restoreDetour()
-{
+long ClientHandshakeDetour::restoreDetour() {
     const auto result = DetourDetach(&reinterpret_cast<PVOID&>(m_originalClientHandshake), hookClientHandshake);
 
     std::printf("Restored PartyHost_HandleClientHandshake\n");
@@ -25,8 +23,7 @@ long ClientHandshakeDetour::restoreDetour()
     return result;
 }
 
-void ClientHandshakeDetour::hookClientHandshake(PartyData_s* party, const int localControllerIndex, netadr_t from, msg_t* msg)
-{
+void ClientHandshakeDetour::hookClientHandshake(PartyData_s* party, const int localControllerIndex, netadr_t from, msg_t* msg) {
     const auto ip = from.getIp();
     const auto accessRights = Ultimate::m_ultimate->m_accessControl.getAccessRights(ip);
 

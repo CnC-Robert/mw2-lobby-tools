@@ -227,7 +227,7 @@ struct gentity_s {
     void draw();
 };
 
-const inline gsl::span<gentity_s> g_entities = { reinterpret_cast<gentity_s*>(0x194B9D0), 2048 };
+const inline gsl::span<gentity_s> g_entities = { reinterpret_cast<gentity_s*>(0x194B950), 2048 };
 
 inline gentity_s *g_airdropCollisionBrush = nullptr;
 

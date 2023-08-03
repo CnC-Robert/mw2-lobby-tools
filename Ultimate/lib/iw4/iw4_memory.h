@@ -3,6 +3,6 @@
 
 namespace Memory {
 
-    IW4_FUNCTION(HunkUserAlloc, int, (void *user, int size, int alignment), 0x5B83F0);
+    IW4_FUNCTION(HunkUserAlloc, int, (void *user, int size, int alignment), 0x5B8330);
 
 }

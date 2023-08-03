@@ -15,9 +15,9 @@ struct CmdArgs
 	int totalUsedTextPool;
 };
 
-const inline auto g_serverCmdArgs = reinterpret_cast<CmdArgs*>(0x1B87254);
+const inline auto g_serverCmdArgs = reinterpret_cast<CmdArgs*>(0x1B871D4);
 
 namespace Server
 {
-	IW4_FUNCTION(ArgvBuffer, void, (int arg, char *buffer, int bufferLength), 0x564030);
+	IW4_FUNCTION(ArgvBuffer, void, (int arg, char *buffer, int bufferLength), 0x563F00);
 }

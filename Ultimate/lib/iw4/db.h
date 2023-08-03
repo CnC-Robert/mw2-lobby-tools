@@ -4,5 +4,5 @@
 
 namespace Database
 {
-	IW4_FUNCTION(FindXAssetHeader, XAssetHeader, (XAssetType type, const char *name), 0x4F4800);
+	IW4_FUNCTION(FindXAssetHeader, XAssetHeader, (XAssetType type, const char *name), 0x4F46E0);
 }

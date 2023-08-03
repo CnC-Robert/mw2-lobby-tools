@@ -10,6 +10,6 @@ struct Direction
 
 namespace Math {
 
-    IW4_FUNCTION(AngleVectors, void, (const float *angles, float *forward, float *right, float *up), 0x5B74E0);
+    IW4_FUNCTION(AngleVectors, void, (const float *angles, float *forward, float *right, float *up), 0x5B7410);
 
 }

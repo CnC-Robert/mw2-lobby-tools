@@ -20,7 +20,6 @@ DetourManager::DetourManager() {
     registerDetour(std::make_shared<ClientDisconnectDetour>()); // Client disconnect
     registerDetour(std::make_shared<MenuResponseDetour>()); // Prevents endgame command it seems
 
-	m_scriptManager.registerHook(230, Proxies::ExitLevel); // Reset ActiveGame when round ends
 	m_scriptManager.registerHook(430, Proxies::SetSpawnWeaponControl);
 	m_scriptManager.registerHook(438, Proxies::Spawn); // Adds player to ActiveGame
 	m_scriptManager.registerHook(467, Proxies::GiveWeaponControl);

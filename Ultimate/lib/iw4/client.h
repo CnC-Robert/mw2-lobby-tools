@@ -18,4 +18,4 @@ struct client_t {
 };
 
 
-const inline gsl::span<client_t> g_cls = { reinterpret_cast<client_t*>(0x3172090), 18 };
+const inline gsl::span<client_t> g_cls = { reinterpret_cast<client_t*>(0x3172010), 18 };

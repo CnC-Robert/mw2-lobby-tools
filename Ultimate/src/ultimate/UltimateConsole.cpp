@@ -1,14 +1,12 @@
 #include "UltimateConsole.h"
 #include <Windows.h>
 
-UltimateConsole::UltimateConsole()
-{
+UltimateConsole::UltimateConsole() {
     AllocConsole();
     freopen_s(&m_fileOut, "CONOUT$", "w", stdout);
 }
 
-UltimateConsole::~UltimateConsole()
-{
+UltimateConsole::~UltimateConsole() {
     fclose(m_fileOut);
     FreeConsole();
 }

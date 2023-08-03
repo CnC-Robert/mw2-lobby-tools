@@ -81,9 +81,9 @@ struct PartyData_s {
 
 
 namespace Party {
-	const inline auto g_partyData = reinterpret_cast<PartyData_s*>(0x10F9268);
+	const inline auto g_partyData = reinterpret_cast<PartyData_s*>(0x10F91E8);
 
-	IW4_FUNCTION(Host_StartMatch, void, (PartyData_s* party, int localControllerIndex), 0x4D7550);
+	IW4_FUNCTION(Host_StartMatch, void, (PartyData_s* party, int localControllerIndex), 0x4D74D0);
 
-	IW4_FUNCTION(Host_BalanceTeams, void, (PartyData_s* party), 0x4D7430);
+	IW4_FUNCTION(Host_BalanceTeams, void, (PartyData_s* party), 0x4D73B0);
 }

@@ -163,7 +163,6 @@
     <ClCompile Include="src\dllmain.cpp" />
     <ClCompile Include="src\ultimate\Ultimate.cpp" />
     <ClCompile Include="src\util\Message.cpp" />
-    <ClCompile Include="src\util\VTable.cpp" />
     <ClCompile Include="lib\iw4\weapon.cpp" />
     <ClCompile Include="src\util\StringUtil.cpp" />
     <ClCompile Include="src\mod\weapon\WeaponRule.cpp" />
@@ -317,7 +316,6 @@
     <ClInclude Include="lib\detours\detours.h" />
     <ClInclude Include="src\ultimate\Ultimate.h" />
     <ClInclude Include="src\util\Message.h" />
-    <ClInclude Include="src\util\VTable.h" />
     <ClInclude Include="lib\iw4\weapon.h" />
     <ClInclude Include="src\util\StringUtil.h" />
     <ClInclude Include="src\mod\weapon\WeaponRule.h" />

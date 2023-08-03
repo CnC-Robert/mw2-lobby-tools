@@ -12,7 +12,7 @@ std::vector<gentity_s*> Script::GetEntArray(const char* key, const char* value)
 
     const auto valueIndex = String::GetString(value, 0);
 
-    const auto field = *reinterpret_cast<int32_t*>(20 * Script::GetOffset(0, key).intValue + 0x69B9B8 + 0x04);
+    const auto field = *reinterpret_cast<int32_t*>(20 * Script::GetOffset(0, key).intValue + 0x69B9B8 + 0x04); // Might not work
 
     for (auto i = 0; i < g_level->num_entities; ++i) {
 

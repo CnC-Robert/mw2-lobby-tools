@@ -90,7 +90,7 @@ struct game_hudelem_s {
 
 namespace Hud {
 
-    IW4_FUNCTION(Alloc, game_hudelem_s *, (int clientNum, int teamNum), 0x529550);
-    IW4_FUNCTION(Free, void, (game_hudelem_s *hud), 0x54ADD0);
+    IW4_FUNCTION(Alloc, game_hudelem_s *, (int clientNum, int teamNum), 0x529420);
+    IW4_FUNCTION(Free, void, (game_hudelem_s *hud), 0x54ACA0);
 
 }

@@ -4,7 +4,7 @@
 KeyboardPressFunction KeyboardPressDetour::m_originalKeyboardPress;
 
 long KeyboardPressDetour::applyDetour() {
-	m_originalKeyboardPress = reinterpret_cast<KeyboardPressFunction>(0x5CC660);
+	m_originalKeyboardPress = reinterpret_cast<KeyboardPressFunction>(0x5CC5F0);
 
 	const auto result = DetourAttach(&reinterpret_cast<PVOID&>(m_originalKeyboardPress), &hookKeyboardPress);
 

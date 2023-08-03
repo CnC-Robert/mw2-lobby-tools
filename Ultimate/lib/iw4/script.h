@@ -321,51 +321,51 @@ struct scrVmPub_t {
 
 namespace Script {
 
-IW4_FUNCTION(GetNumParam, uint32_t, (), 0x580F30);
+IW4_FUNCTION(GetNumParam, uint32_t, (), 0x580DF0);
 
-IW4_FUNCTION(ClearOutParams, void, (), 0x57F480);
+IW4_FUNCTION(ClearOutParams, void, (), 0x57F340);
 
-IW4_FUNCTION(GetOffset, VariableUnion, (unsigned int classnum, const char* name), 0x57B920);
+IW4_FUNCTION(GetOffset, VariableUnion, (unsigned int classnum, const char* name), 0x57B7E0);
 
-IW4_FUNCTION(GetConstString, unsigned int, (unsigned int index), 0x580730);
+IW4_FUNCTION(GetConstString, unsigned int, (unsigned int index), 0x5805F0);
 
-IW4_FUNCTION(GetString, const char*, (unsigned int index), 0x5808E0);
+IW4_FUNCTION(GetString, const char*, (unsigned int index), 0x5807A0);
 
-IW4_FUNCTION(GetInt, int, (unsigned int index), 0x580540);
+IW4_FUNCTION(GetInt, int, (unsigned int index), 0x580400);
 
-IW4_FUNCTION(GetEntity, gentity_s*, (unsigned int index), 0x54ADA0);
+IW4_FUNCTION(GetEntity, gentity_s*, (unsigned int index), 0x54AC70);
 
-IW4_FUNCTION(GetEntityIdRef, scr_entref_t, (unsigned int entId), 0x57BC20);
+IW4_FUNCTION(GetEntityIdRef, scr_entref_t, (unsigned int entId), 0x57BAE0);
 
-IW4_FUNCTION(GetSelf, unsigned int, (unsigned int threadId), 0x57B630);
+IW4_FUNCTION(GetSelf, unsigned int, (unsigned int threadId), 0x57B060);
 
-IW4_FUNCTION(AddString, void, (const char* value), 0x581100);
+IW4_FUNCTION(AddString, void, (const char* value), 0x580FC0);
 
-IW4_FUNCTION(AddInt, void, (int value), 0x580F40);
+IW4_FUNCTION(AddInt, void, (int value), 0x580E00);
 
-IW4_FUNCTION(GetObjectType, unsigned int, (unsigned int id), 0x57B890);
+IW4_FUNCTION(GetObjectType, unsigned int, (unsigned int id), 0x57B750);
 
-IW4_FUNCTION(CreateCanonicalFilename, unsigned int, (const char* filename), 0x57A980);
+IW4_FUNCTION(CreateCanonicalFilename, unsigned int, (const char* filename), 0x57A840);
 
-IW4_FUNCTION(FindVariable, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57B3D0);
+IW4_FUNCTION(FindVariable, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57B2A0);
 
-IW4_FUNCTION(GetNewVariable, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57CCB0);
+IW4_FUNCTION(GetNewVariable, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57CB70);
 
-IW4_FUNCTION(RemoveVariable, void, (unsigned int parentId, unsigned int unsignedValue), 0x57CE10);
+IW4_FUNCTION(RemoveVariable, void, (unsigned int parentId, unsigned int unsignedValue), 0x57CCD0);
 
-IW4_FUNCTION(GetVariable, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57CC80);
+IW4_FUNCTION(GetVariable, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57CB40);
 
-IW4_FUNCTION(FindObject, unsigned int, (unsigned int id), 0x57B830);
+IW4_FUNCTION(FindObject, unsigned int, (unsigned int id), 0x57B6F0);
 
-IW4_FUNCTION(GetObject, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57B770);
+IW4_FUNCTION(GetObject, unsigned int, (unsigned int parentId, unsigned int unsignedValue), 0x57B630);
 
 std::vector<gentity_s*> GetEntArray(const char* key, const char* value);
 
-const inline auto g_scrVmPub = reinterpret_cast<scrVmPub_t*>(0x1FDE0E0);
+const inline auto g_scrVmPub = reinterpret_cast<scrVmPub_t*>(0x1FDE060);
 
-const inline gsl::span<void (*)(scr_entref_t)> g_interalFunctions = { reinterpret_cast<void (**)(scr_entref_t)>(0x1D96718), 1024 };
+const inline gsl::span<void (*)(scr_entref_t)> g_interalFunctions = { reinterpret_cast<void (**)(scr_entref_t)>(0x1D96698), 1024 };
 
-const inline auto g_allMethodCount = reinterpret_cast<int32_t*>(0x1D96714);
+const inline auto g_allMethodCount = reinterpret_cast<int32_t*>(0x1D96694);
 
-const inline auto g_scriptStringConstants = reinterpret_cast<scr_const_t*>(0x1B6A980);
+const inline auto g_scriptStringConstants = reinterpret_cast<scr_const_t*>(0x1B6A900);
 }

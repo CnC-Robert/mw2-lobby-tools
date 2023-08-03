@@ -12,4 +12,4 @@ struct IWSteamClient
     CSteamID lobbyId; // or, 'const inline steam_lobby_id = reinterpret_cast<uint64_t*>(0x66547B8 + 0x90);'
 };
 
-const inline auto g_IWSteamClient = reinterpret_cast<IWSteamClient*>(0x66547B8);
+const inline auto g_IWSteamClient = reinterpret_cast<IWSteamClient*>(0x6654738);

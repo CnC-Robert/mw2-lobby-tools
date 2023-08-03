@@ -108,12 +108,12 @@ enum DvarSetSource {
 
 namespace Dvar {
 
-IW4_FUNCTION(FindDvar, dvar_s*, (const char* dvarName), 0x5BCF30);
+IW4_FUNCTION(FindDvar, dvar_s*, (const char* dvarName), 0x5BCE80);
 
-IW4_FUNCTION(SetString, void, (dvar_s * dvar, const char* value), 0x5BE5E0);
+IW4_FUNCTION(SetString, void, (dvar_s * dvar, const char* value), 0x5BE530);
 
-const inline auto g_dvars = reinterpret_cast<dvar_s**>(0x637C470);
-const inline auto g_numDvars = reinterpret_cast<int*>(0x637C448);
+const inline auto g_dvars = reinterpret_cast<dvar_s**>(0x637C3F0);
+const inline auto g_numDvars = reinterpret_cast<int*>(0x637C3C8);
 
 inline dvar_s* g_matchedDvars[4096] { nullptr };
 inline auto g_numMatchedDvars = 0;

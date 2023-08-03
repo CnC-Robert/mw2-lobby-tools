@@ -95,4 +95,4 @@ struct gclient_s {
     char pad_0x33C4[0x2A8]; //0x33C4
 };
 
-const inline gsl::span<gclient_s> g_clients = { reinterpret_cast<gclient_s*>(0x1B0E1C0), 18 };
+const inline gsl::span<gclient_s> g_clients = { reinterpret_cast<gclient_s*>(0x1B0E140), 18 };

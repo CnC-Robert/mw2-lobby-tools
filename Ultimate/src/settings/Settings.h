@@ -51,7 +51,6 @@ struct LogSettings {
         , m_logXAssetFilter{ -1 }
         , m_logMenuResponses{ true }
         , m_logAccessViolations{ true }
-        //, m_logServerCommands{ false }
     {
     }
 
@@ -68,7 +67,6 @@ struct LogSettings {
     int m_logXAssetFilter;
     bool m_logMenuResponses;
     bool m_logAccessViolations;
-    //bool m_logServerCommands;
 
     void drawLogSettings();
 };

@@ -3,6 +3,6 @@
 
 namespace System {
 
-    IW4_FUNCTION(ShowConsole, void, (), 0x4D3120); // 208
+    IW4_FUNCTION(ShowConsole, void, (), 0x4D309F); // 208
 
 }

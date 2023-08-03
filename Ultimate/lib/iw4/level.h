@@ -22,4 +22,4 @@ struct level_locals_t
     int startTime;
 };
 
-const inline auto g_level = reinterpret_cast<level_locals_t*>(0x1B4B558);
+const inline auto g_level = reinterpret_cast<level_locals_t*>(0x1B4B4D8);

@@ -671,10 +671,10 @@ struct WeaponVariantDef {
 };
 
 using BG_WeaponName_f = const char* (*)(int weapon);
-const inline auto BG_WeaponName = reinterpret_cast<BG_WeaponName_f>(0x479530);
+const inline auto BG_WeaponName = reinterpret_cast<BG_WeaponName_f>(0x4794D0);
 
 using BG_FindWeaponIndexForName_f = int (*)(const char* name);
-const inline auto BG_FindWeaponIndexForName = reinterpret_cast<BG_FindWeaponIndexForName_f>(0x479540);
+const inline auto BG_FindWeaponIndexForName = reinterpret_cast<BG_FindWeaponIndexForName_f>(0x4794E0);
 
 std::string TranslateWeaponBase(const std::string_view& weapon);
 std::string TranslateWeaponAttachment(const std::string_view& attachment);
@@ -684,4 +684,4 @@ bool IsWeapon(int weaponIndex);
 bool IsEquipment(int weaponIndex);
 bool IsAkimbo(int weaponIndex);
 
-const inline gsl::span<WeaponDef*> g_weaponDefs = { reinterpret_cast<WeaponDef**>(0x86CE20), 1191 };
+const inline gsl::span<WeaponDef*> g_weaponDefs = { reinterpret_cast<WeaponDef**>(0x86CDA0), 1191 };

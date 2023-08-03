@@ -5,9 +5,8 @@
 
 RegisterMethodFunction RegisterMethodDetour::m_originalRegisterMethod;
 
-long RegisterMethodDetour::applyDetour()
-{
-    m_originalRegisterMethod = reinterpret_cast<RegisterMethodFunction>(0x577520);
+long RegisterMethodDetour::applyDetour() {
+    m_originalRegisterMethod = reinterpret_cast<RegisterMethodFunction>(0x5773E0);
 
     const auto result = DetourAttach(&reinterpret_cast<PVOID&>(m_originalRegisterMethod), hookRegisterMethod);
 
@@ -16,8 +15,7 @@ long RegisterMethodDetour::applyDetour()
     return result;
 }
 
-long RegisterMethodDetour::restoreDetour()
-{
+long RegisterMethodDetour::restoreDetour() {
     const auto result = DetourDetach(&reinterpret_cast<PVOID&>(m_originalRegisterMethod), hookRegisterMethod);
 
     std::printf("Restored Script_RegisterMethod\n");
@@ -25,8 +23,7 @@ long RegisterMethodDetour::restoreDetour()
     return result;
 }
 
-void RegisterMethodDetour::hookRegisterMethod(void (*method)(scr_entref_t))
-{
+void RegisterMethodDetour::hookRegisterMethod(void (*method)(scr_entref_t)) {
     const auto index = *Script::g_allMethodCount;
 
     m_originalRegisterMethod(method);
